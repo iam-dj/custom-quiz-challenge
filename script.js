@@ -54,6 +54,55 @@ function retrievedNine() {
   textArea9.val(retrievedText);
 }
 
+var input = {
+  saveBtn1: {
+    Btn: $("#hour-1 .saveBtn"),
+    textarea: $("#hour-1 textarea"),
+    key: "text1"
+  },
+  saveBtn2: {
+    Btn: $("#hour-2 .saveBtn"),
+    textarea: $("#hour-2 textarea"),
+    key: "text2"
+  },
+  saveBtn3: {
+    Btn: $("#hour-3 .saveBtn"),
+    textarea: $("#hour-3 textarea"),
+    key: "text3"
+  },
+  saveBtn4: {
+    Btn: $("#hour-4 .saveBtn"),
+    textarea: $("#hour-4 textarea"),
+    key: "text4"
+  },
+  saveBtn5: {
+    Btn: $("#hour-5 .saveBtn"),
+    textarea: $("#hour-5 textarea"),
+    key: "text5"
+  },
+  saveBtn6: {
+    Btn: $("#hour-6 .saveBtn"),
+    textarea: $("#hour-6 textarea"),
+    key: "text6"
+  },
+  saveBtn7: {
+    Btn: $("#hour-7 .saveBtn"),
+    textarea: $("#hour-7 textarea"),
+    key: "text7"
+  },
+  saveBtn8: {
+    Btn: $("#hour-8 .saveBtn"),
+    textarea: $("#hour-8 textarea"),
+    key: "text8"
+  },
+  saveBtn9: {
+    Btn: $("#hour-9 .saveBtn"),
+    textarea: $("#hour-9 textarea"),
+    key: "text9"
+  }
+};
+
+
 var saveButton1 = $("#hour-1 .saveBtn");
 var saveButton2 = $("#hour-2 .saveBtn");
 var saveButton3 = $("#hour-3 .saveBtn");
@@ -74,7 +123,8 @@ var textArea7 = $("#hour-7 textarea");
 var textArea8 = $("#hour-8 textarea");
 var textArea9 = $("#hour-9 textarea");
 
-var divs = [0, div1, div2, div3, div4, div5, div9, div10, div11, div12];
+
+var divs = [div1, div2, div3, div4, div5, div9, div10, div11, div12];
 
 $(document).ready(function () {
 
@@ -83,12 +133,12 @@ $(document).ready(function () {
     let timeNum = parseInt(timea);
 
     for (let index = 1; index < divs.length; index++) {
-      if (timeNum > index) {
-        divs[index].removeClass('past future').addClass('past');
-      } else if (timeNum < index) {
+      if (timeNum == timeNum-index) {
+        divs[index].removeClass('past future').addClass('present');
+      } else if (timeNum > timeNum-index) {
         divs[index].removeClass('past present').addClass('future');
       } else {
-        divs[index].removeClass('past future').addClass('present');
+        divs[index].removeClass('present future ').addClass('past');
       }
     }
   }, 1000);
@@ -104,6 +154,10 @@ $(document).ready(function () {
   retrievedNine();
   // checkCPF();
   // Call retrieved function when page loads
+
+
+// Define the retrieved function that takes in the key and textarea element as parameters
+
 
   saveButton1.on("click", function (event) {
     event.preventDefault();
