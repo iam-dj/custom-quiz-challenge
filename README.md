@@ -19,6 +19,10 @@ head to this link: https://iam-dj.github.io/fifth-challenge  and submit the task
 ## Credits
 
 Thanks Abi Kumagi 
+ana riley
+alivia thomas
+veronica giggs
+ashleigh chute
 https://developer.mozilla.org/
 
 
